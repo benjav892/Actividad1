@@ -10,7 +10,7 @@ import java.util.List;
 public class SolicitudRepository {
    private List<Solicitud> listaSolicitudes = new ArrayList<>();
 
-   public Solicitud buscarPorRut(int rut){  //se usa Solicitud porque retorna un objeto de tipo solicitud
+   public Solicitud buscarPorRut(int rut){  
        for(Solicitud solicitud: listaSolicitudes){
            if(solicitud.getRut()==rut){
                return solicitud;
@@ -18,11 +18,11 @@ public class SolicitudRepository {
        }
        return null;
    }
-   public List<Solicitud> obtenerSolicitudes(){  //se usa List<Solicitud> porque retorna un Dato de tipo lista
+   public List<Solicitud> obtenerSolicitudes(){  
        return listaSolicitudes;
    }
 
-   public Solicitud registrarSolicitud(Solicitud solicitud){//¿Es necesario validar si es que existe? es necesario
+   public Solicitud registrarSolicitud(Solicitud solicitud){
        if(buscarPorRut(solicitud.getRut())==null){
             listaSolicitudes.add(solicitud);
             return solicitud;
